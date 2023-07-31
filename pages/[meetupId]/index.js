@@ -1,9 +1,18 @@
+import { useRouter } from 'next/router'
 import React from 'react'
 
-function MeetuoId() {
+function MeetupId() {
+
+  const router = useRouter()
+
+  const meetupId = router.query.meetupId
+
+  console.log('meetupId', meetupId)
+
   return (
-    <div>MeetuoId</div>
+    <div>MeetupId {meetupId}</div>
+
   )
 }
 
-export default MeetuoId
+export default MeetupId

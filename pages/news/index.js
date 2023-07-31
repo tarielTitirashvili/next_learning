@@ -25,10 +25,13 @@ const DUMMY_LIST = [
   }
 ]
 
-function Home() {
+function News() {
   return (
-    <MeetupList meetups={DUMMY_LIST} />
+    <>
+      <h2> news page </h2>
+      <MeetupList meetups={DUMMY_LIST} />
+    </>
   )
 }
 
-export default Home
+export default News
