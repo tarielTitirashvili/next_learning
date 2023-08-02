@@ -27,7 +27,9 @@ const DUMMY_LIST = [
 
 function Home() {
   return (
-    <MeetupList meetups={DUMMY_LIST} />
+    <>
+      <h1>Home</h1>
+    </>
   )
 }
 

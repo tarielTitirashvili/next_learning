@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import MeetupList from '@/components/meetups/MeetupList'
 
 const DUMMY_LIST = [
@@ -25,13 +25,24 @@ const DUMMY_LIST = [
   }
 ]
 
-function News() {
+function News(props) {
+  const [meetups, setMeetups]=useState([])
+  useEffect(()=>{
+    setMeetups(DUMMY_LIST)
+  },[])
   return (
     <>
       <h2> news page </h2>
-      <MeetupList meetups={DUMMY_LIST} />
+      <MeetupList meetups={props.meetups} />
     </>
   )
+}
+
+export async function getStaticProps(){
+  return { props: {
+    meetups: DUMMY_LIST
+    } 
+  }
 }
 
 export default News

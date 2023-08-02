@@ -10,7 +10,12 @@ function MeetupId() {
   console.log('meetupId', meetupId)
 
   return (
-    <div>MeetupId {meetupId}</div>
+    <div>
+      {/* <img src='' alt='' /> */} 
+      {/* <h1>{title}</h1> */}
+      {/* <address> address </address> */}
+      MeetupId {meetupId}
+    </div>
 
   )
 }
