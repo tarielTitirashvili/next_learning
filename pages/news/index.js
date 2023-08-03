@@ -24,7 +24,7 @@ const DUMMY_LIST = [
     description: 'this is a second meetup'
   }
 ]
-
+  
 function News(props) {
   const [meetups, setMeetups]=useState([])
   useEffect(()=>{
@@ -41,7 +41,8 @@ function News(props) {
 export async function getStaticProps(){
   return { props: {
     meetups: DUMMY_LIST
-    } 
+    },
+    revalidate: 10
   }
 }
 
