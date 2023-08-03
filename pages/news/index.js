@@ -38,9 +38,21 @@ function News(props) {
   )
 }
 
-export async function getStaticProps(){
-  return { props: {
-    meetups: DUMMY_LIST
+// export async function getStaticProps(){
+//   return { props: {
+//     meetups: DUMMY_LIST
+//     },
+//     revalidate: 10
+//   }
+// }
+
+export async function getServerSideProps(context) {
+  // getServerSideProps is better when we need to update data all the time ot to access req or res objects
+  const { req, res } = context
+
+  return { 
+    props: {
+      meetups: DUMMY_LIST
     },
     revalidate: 10
   }
